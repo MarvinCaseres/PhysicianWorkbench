@@ -44,18 +44,20 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.Viewbtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.Viewbtn);
             this.guna2Panel1.Controls.Add(this.guna2DataGridView1);
             this.guna2Panel1.Controls.Add(this.guna2TextBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(954, 594);
+            this.guna2Panel1.Size = new System.Drawing.Size(1282, 752);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2DataGridView1
@@ -115,7 +117,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView1.RowTemplate.Height = 40;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(929, 477);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1257, 605);
             this.guna2DataGridView1.TabIndex = 2;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -197,7 +199,7 @@
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "Search Patient";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(317, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(414, 36);
             this.guna2TextBox1.TabIndex = 1;
             // 
             // guna2Elipse1
@@ -205,13 +207,28 @@
             this.guna2Elipse1.BorderRadius = 35;
             this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
             // 
+            // Viewbtn
+            // 
+            this.Viewbtn.AutoRoundedCorners = true;
+            this.Viewbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Viewbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Viewbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Viewbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Viewbtn.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Viewbtn.ForeColor = System.Drawing.Color.White;
+            this.Viewbtn.Location = new System.Drawing.Point(1052, 676);
+            this.Viewbtn.Name = "Viewbtn";
+            this.Viewbtn.Size = new System.Drawing.Size(204, 63);
+            this.Viewbtn.TabIndex = 3;
+            this.Viewbtn.Text = "View";
+            // 
             // Past
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel1);
             this.Name = "Past";
-            this.Size = new System.Drawing.Size(954, 594);
+            this.Size = new System.Drawing.Size(1282, 752);
             this.Load += new System.EventHandler(this.Past_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
@@ -231,5 +248,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reason;
         private System.Windows.Forms.DataGridViewTextBoxColumn treatment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private Guna.UI2.WinForms.Guna2Button Viewbtn;
     }
 }

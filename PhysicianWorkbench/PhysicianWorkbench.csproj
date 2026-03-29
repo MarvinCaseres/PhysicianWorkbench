@@ -32,12 +32,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.32.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.32.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.1.0\lib\net472\Guna.Charts.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
@@ -101,17 +108,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="consult.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="consult.Designer.cs">
       <DependentUpon>consult.cs</DependentUpon>
-    </Compile>
-    <Compile Include="consultation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="consultation.Designer.cs">
-      <DependentUpon>consultation.cs</DependentUpon>
     </Compile>
     <Compile Include="Dash.cs">
       <SubType>UserControl</SubType>
@@ -119,17 +121,23 @@
     <Compile Include="Dash.Designer.cs">
       <DependentUpon>Dash.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOGIN.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIN.Designer.cs">
-      <DependentUpon>LOGIN.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Past.cs">
       <SubType>UserControl</SubType>
@@ -142,17 +150,17 @@
     <EmbeddedResource Include="consult.resx">
       <DependentUpon>consult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultation.resx">
-      <DependentUpon>consultation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGIN.resx">
-      <DependentUpon>LOGIN.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Past.resx">
       <DependentUpon>Past.cs</DependentUpon>
@@ -192,6 +200,62 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show Password.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo.bmp" />
+    <None Include="Resources\image-removebg-preview.png" />
+    <None Include="Resources\3-removebg-preview.png" />
+    <None Include="Resources\Untitled design %281%29.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\310.png" />
+    <None Include="Resources\35.png" />
+    <None Include="Resources\34.png" />
+    <None Include="Resources\33.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\height.png" />
+    <None Include="Resources\Oxygen.png" />
+    <None Include="Resources\Weight.png" />
+    <None Include="Resources\Heart.png" />
+    <None Include="Resources\Temperature.png" />
+    <None Include="Resources\BloodPressure.png" />
+    <None Include="Resources\Bday.png" />
+    <None Include="Resources\Security.png" />
+    <None Include="Resources\PlusPlus.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Generate Daily Report.png" />
+    <None Include="Resources\Add_To_Queue_Not.png" />
+    <None Include="Resources\Add_To_Queue.png" />
+    <None Include="Resources\321.png" />
+    <None Include="Resources\Hide Password.png" />
+    <None Include="Resources\Notification.png" />
+    <Content Include="Resources\Sex.png" />
+    <None Include="Resources\Sex1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
