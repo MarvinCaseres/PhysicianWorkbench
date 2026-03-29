@@ -30,7 +30,7 @@ namespace PhysicianWorkbench
                 {
                     conn.Open();
 
-                    string query = "SELECT StaffID, FullName, PasswordHash FROM staffaccounts WHERE Username=@user AND PasswordHash=@pass";
+                    string query = "SELECT StaffID, FullName, PasswordHash FROM staffaccounts WHERE Username=@user AND PasswordHash=@pass AND Role='Doctor'";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@user", Usernametb.Text);

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Pqc.Crypto.Frodo;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -54,8 +55,72 @@ namespace PhysicianWorkbench
         }
         private void guna2Button5_Click(object sender, EventArgs e)
         {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
 
-            string query = "DELETE * FROM patient_queue ORDER BY triage_id DESC LIMIT 1";
+                    // 🔹 STEP 0: Get birthofdate from patient_registration
+                    DateTime? birthdate = null;
+
+                    string getBdateQuery = "SELECT birthofdate FROM patient_registration WHERE patientid = @pid";
+                    MySqlCommand getCmd = new MySqlCommand(getBdateQuery, conn);
+                    getCmd.Parameters.AddWithValue("@pid", lblPatientID.Text);
+
+                    object result = getCmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        birthdate = Convert.ToDateTime(result);
+                    }
+
+                    // 🔹 STEP 1: Insert into patient_record
+                    string insertQuery = @"
+                    INSERT INTO patient_record
+                    (patientid, fullname, sex, age, birthofdate, bloodpressure, heartrate, oxygen, temp, weight, height, chiefcomplaint, prescription, docNotes)
+                    VALUES
+                    (@pid, @name, @sex, @age, @bdate, @bp, @hr, @oxy, @temp, @weight, @height, @complaint, @pres, @notes)";
+
+                    MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+
+                    insertCmd.Parameters.AddWithValue("@pid", lblPatientID.Text);
+                    insertCmd.Parameters.AddWithValue("@name", lblName.Text);
+                    insertCmd.Parameters.AddWithValue("@sex", lblSex.Text);
+                    insertCmd.Parameters.AddWithValue("@age", lblAge.Text);
+
+                    // 🔥 birthdate parameter
+                    if (birthdate.HasValue)
+                        insertCmd.Parameters.AddWithValue("@bdate", birthdate.Value);
+                    else
+                        insertCmd.Parameters.AddWithValue("@bdate", DBNull.Value);
+
+                    insertCmd.Parameters.AddWithValue("@bp", BloodPressuretb.Text);
+                    insertCmd.Parameters.AddWithValue("@hr", HeartRatetb.Text);
+                    insertCmd.Parameters.AddWithValue("@oxy", Oxygentb.Text);
+                    insertCmd.Parameters.AddWithValue("@temp", Temptb.Text);
+                    insertCmd.Parameters.AddWithValue("@weight", Weighttb.Text);
+                    insertCmd.Parameters.AddWithValue("@height", Heighttb.Text);
+                    insertCmd.Parameters.AddWithValue("@complaint", ChiefComptb.Text);
+                    insertCmd.Parameters.AddWithValue("@pres", Prescriptiontb.Text);
+                    insertCmd.Parameters.AddWithValue("@notes", Notetb.Text);
+
+                    insertCmd.ExecuteNonQuery();
+
+                    // 🔹 STEP 2: Delete from queue AFTER saving
+                    string deleteQuery = "DELETE FROM patient_queue WHERE patient_id = @pid";
+                    MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, conn);
+                    deleteCmd.Parameters.AddWithValue("@pid", lblPatientID.Text);
+
+                    deleteCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Session Done");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
 
             currentPage = 1;
 
@@ -325,6 +390,11 @@ namespace PhysicianWorkbench
             }
 
             return formatted;
+        }
+
+        private void Diagnosticbtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

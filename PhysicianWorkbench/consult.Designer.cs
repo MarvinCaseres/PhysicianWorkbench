@@ -76,9 +76,10 @@
             this.Diagnosticbtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.Submitbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.Draftbtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ViewRecordbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.Datelbl = new System.Windows.Forms.Label();
+            this.Timelbl = new System.Windows.Forms.Label();
             this.PictureBox3 = new System.Windows.Forms.PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -87,8 +88,6 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox7 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.Datelbl = new System.Windows.Forms.Label();
-            this.Timelbl = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -129,7 +128,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.43007F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.25595F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.31398F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.Controls.Add(this.label17, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label20, 1, 3);
@@ -165,7 +164,7 @@
             this.label17.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold);
             this.label17.Location = new System.Drawing.Point(834, 251);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(391, 26);
+            this.label17.Size = new System.Drawing.Size(390, 26);
             this.label17.TabIndex = 48;
             this.label17.Text = "Diagnostics Orders";
             // 
@@ -192,7 +191,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(41, 31);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1183, 162);
+            this.guna2Panel2.Size = new System.Drawing.Size(1182, 162);
             this.guna2Panel2.TabIndex = 4;
             // 
             // lblAge
@@ -376,7 +375,7 @@
             this.guna2Panel3.Controls.Add(this.guna2Panel14);
             this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Controls.Add(this.guna2Panel4);
-            this.guna2Panel3.Location = new System.Drawing.Point(67, 200);
+            this.guna2Panel3.Location = new System.Drawing.Point(66, 200);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1131, 34);
             this.guna2Panel3.TabIndex = 16;
@@ -884,7 +883,7 @@
             this.guna2Panel9.Controls.Add(this.Diagnosticbtn);
             this.guna2Panel9.Location = new System.Drawing.Point(834, 280);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(391, 198);
+            this.guna2Panel9.Size = new System.Drawing.Size(390, 198);
             this.guna2Panel9.TabIndex = 49;
             // 
             // Diagnosticbtn
@@ -902,6 +901,7 @@
             this.Diagnosticbtn.Size = new System.Drawing.Size(388, 57);
             this.Diagnosticbtn.TabIndex = 4;
             this.Diagnosticbtn.Text = "Order Menu";
+            this.Diagnosticbtn.Click += new System.EventHandler(this.Diagnosticbtn_Click);
             // 
             // guna2Panel10
             // 
@@ -909,10 +909,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel10.Controls.Add(this.Submitbtn);
-            this.guna2Panel10.Controls.Add(this.Draftbtn);
             this.guna2Panel10.Location = new System.Drawing.Point(834, 524);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(391, 198);
+            this.guna2Panel10.Size = new System.Drawing.Size(390, 198);
             this.guna2Panel10.TabIndex = 50;
             // 
             // Submitbtn
@@ -925,27 +924,12 @@
             this.Submitbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.Submitbtn.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold);
             this.Submitbtn.ForeColor = System.Drawing.Color.White;
-            this.Submitbtn.Location = new System.Drawing.Point(5, 101);
+            this.Submitbtn.Location = new System.Drawing.Point(5, 53);
             this.Submitbtn.Name = "Submitbtn";
             this.Submitbtn.Size = new System.Drawing.Size(388, 94);
             this.Submitbtn.TabIndex = 6;
             this.Submitbtn.Text = "Submit Consultation";
             this.Submitbtn.Click += new System.EventHandler(this.guna2Button5_Click);
-            // 
-            // Draftbtn
-            // 
-            this.Draftbtn.AutoRoundedCorners = true;
-            this.Draftbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Draftbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Draftbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Draftbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Draftbtn.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Draftbtn.ForeColor = System.Drawing.Color.White;
-            this.Draftbtn.Location = new System.Drawing.Point(5, 3);
-            this.Draftbtn.Name = "Draftbtn";
-            this.Draftbtn.Size = new System.Drawing.Size(388, 94);
-            this.Draftbtn.TabIndex = 5;
-            this.Draftbtn.Text = "Save To Draft";
             // 
             // guna2Elipse1
             // 
@@ -967,13 +951,37 @@
             this.ViewRecordbtn.TabIndex = 25;
             this.ViewRecordbtn.Text = "View Record";
             // 
+            // Datelbl
+            // 
+            this.Datelbl.AutoSize = true;
+            this.Datelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Datelbl.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datelbl.ForeColor = System.Drawing.Color.White;
+            this.Datelbl.Location = new System.Drawing.Point(749, 52);
+            this.Datelbl.Name = "Datelbl";
+            this.Datelbl.Size = new System.Drawing.Size(92, 28);
+            this.Datelbl.TabIndex = 17;
+            this.Datelbl.Text = "Day, Date";
+            // 
+            // Timelbl
+            // 
+            this.Timelbl.AutoSize = true;
+            this.Timelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Timelbl.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelbl.ForeColor = System.Drawing.Color.White;
+            this.Timelbl.Location = new System.Drawing.Point(749, 85);
+            this.Timelbl.Name = "Timelbl";
+            this.Timelbl.Size = new System.Drawing.Size(53, 28);
+            this.Timelbl.TabIndex = 18;
+            this.Timelbl.Text = "Time";
+            // 
             // PictureBox3
             // 
             this.PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.PictureBox3.Image = global::PhysicianWorkbench.Properties.Resources.w;
-            this.PictureBox3.Location = new System.Drawing.Point(612, 33);
+            this.PictureBox3.Location = new System.Drawing.Point(611, 33);
             this.PictureBox3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.PictureBox3.Name = "PictureBox3";
             this.PictureBox3.Size = new System.Drawing.Size(113, 92);
@@ -1087,30 +1095,6 @@
             this.guna2CirclePictureBox7.TabStop = false;
             this.guna2CirclePictureBox7.UseTransparentBackground = true;
             // 
-            // Datelbl
-            // 
-            this.Datelbl.AutoSize = true;
-            this.Datelbl.BackColor = System.Drawing.Color.Transparent;
-            this.Datelbl.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Datelbl.ForeColor = System.Drawing.Color.White;
-            this.Datelbl.Location = new System.Drawing.Point(749, 52);
-            this.Datelbl.Name = "Datelbl";
-            this.Datelbl.Size = new System.Drawing.Size(92, 28);
-            this.Datelbl.TabIndex = 17;
-            this.Datelbl.Text = "Day, Date";
-            // 
-            // Timelbl
-            // 
-            this.Timelbl.AutoSize = true;
-            this.Timelbl.BackColor = System.Drawing.Color.Transparent;
-            this.Timelbl.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Timelbl.ForeColor = System.Drawing.Color.White;
-            this.Timelbl.Location = new System.Drawing.Point(749, 85);
-            this.Timelbl.Name = "Timelbl";
-            this.Timelbl.Size = new System.Drawing.Size(53, 28);
-            this.Timelbl.TabIndex = 18;
-            this.Timelbl.Text = "Time";
-            // 
             // consult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1202,7 +1186,6 @@
         private Guna.UI2.WinForms.Guna2Button Diagnosticbtn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2Button Submitbtn;
-        private Guna.UI2.WinForms.Guna2Button Draftbtn;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox7;
         internal System.Windows.Forms.Label label18;

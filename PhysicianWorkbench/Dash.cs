@@ -96,10 +96,15 @@ namespace PhysicianWorkbench
                 object result = cmd.ExecuteScalar();
                 label1.Text = result.ToString();
 
-                query = "SELECT COUNT(*) FROM patient_registration WHERE priority_level= 'High Risk'";
+                query = "SELECT COUNT(*) FROM triage_records WHERE priority_level= 'High Risk'";
                 cmd = new MySqlCommand(query, conn);
                 result = cmd.ExecuteScalar();
                 label4.Text = result.ToString();
+
+                query = "SELECT COUNT(*) FROM patient_record";
+                cmd = new MySqlCommand(query, conn);
+                result = cmd.ExecuteScalar();
+                label6.Text = result.ToString();
 
                 chart1.Series.Clear();
                 chart1.Titles.Clear();
@@ -109,7 +114,6 @@ namespace PhysicianWorkbench
                 int age60_plus = 0;
 
                 {
-                    conn.Open();
 
                     query = "SELECT birthdate FROM patient_registration";
                     cmd = new MySqlCommand(query, conn);
